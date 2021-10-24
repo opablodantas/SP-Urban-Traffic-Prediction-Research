@@ -1,2 +1,2 @@
 # behavior_urban_traffic
-Trabalho feito em aula ministrada pelo professor Jose Storopoli
+Repositório do trabalho feito em aula ministrada pelo professor Jose Storopoli da matéria de Ciência de Dados

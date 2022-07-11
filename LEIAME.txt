@@ -1,0 +1,17 @@
+Para executar o Dashoard:
+
+1 - Abra o terminal ou prompt de comando.
+Vá até o local em que você colocou os arquivo e use o comando abaixo para instalar os pacotes que estão no documento requerimentos.txt
+
+pip install -r requerimentos.txt
+
+
+2 - Abra o terminal ou prompt de comando, navegue até a pasta onde você colocou os arquivos e digite:
+
+streamlit run data_app_viz.py
+
+
+4- O Dashboard será aberto no seu navegador padrão.
+
+
+3 - Explore o Dashboard

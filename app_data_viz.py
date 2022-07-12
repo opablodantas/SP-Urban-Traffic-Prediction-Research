@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd 
 import plotly
 import plotly.express as px
-import seaborn as sns
+
 
 # Adicionando titulo para a visualizaçao
 st.markdown("<h1 style='text-align: center; '><strong><u>Visualização de Dados Interativo sobre o Comportamento do Transito de São Paulo</u></strong></h1>", unsafe_allow_html = True)
@@ -75,30 +75,6 @@ def Class(num):
 # Criando as classes
 df['Class'] = df['Slowness in traffic (%)'].map(Class)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 st.write('Visualizando Dados Brutos')
 st.write(df)
 
@@ -106,9 +82,6 @@ st.write(df)
 st.write('Tabela Cruzada para Observar a Hora e a Classe de Transito')
 cross_date = pd.crosstab(df['Class'], df['Hour (Coded)'])
 st.write(cross_date)
-
-#st.selectbox('Selecione a coluna que deseja ver:', df.columns)
-
 
 # Menu lateral
 # Título do menu lateral
@@ -143,7 +116,7 @@ if select == 'Immobilized bus':
 
 
 	# Grafico de Dispersão
-	fig2 = px.scatter(df, x="Immobilized bus", y="Slowness in traffic (%)") 
+	fig2 = px.scatter(df, x="Immobilized bus", y="Slowness in traffic (%)", color = 'Class') 
 	fig2.update_layout(title = 'Comparação entre o Número de Ocorrências e a Porcentagem de Lentidão',
 		xaxis_title = 'Número de Ocorrências',
         yaxis_title = 'Porcentagem de Lentidão',)
@@ -151,6 +124,8 @@ if select == 'Immobilized bus':
 	st.plotly_chart(fig2)
 
 	st.subheader('Conclusão:')
+	st.write('Ônibus Immobilizado não é garantia de lentidão alta. Como podemos ver no gráfico de variabilidade, não é algo que acontece muito.')
+	st.write('E mesmo ocorrendo em mais de um ponto, dificilmente ocasionou trafego alto.')
 
 
 if select == 'Broken Truck':
@@ -172,6 +147,8 @@ if select == 'Broken Truck':
 	st.plotly_chart(fig2)
 
 	st.subheader('Conclusão:')
+	st.write('Caminhões quebrados já é algo um pouco mais "comum" de ocorrer, como é observado no primeiro gráfico.')
+	st.write('No segundo gráfico podemos observar que quando um caminhão está quebrado, ele pode influênciar sim o nível de trânsito mas isso não é uma regra')
 
 
 if select == 'Vehicle excess':
@@ -193,6 +170,7 @@ if select == 'Vehicle excess':
 	st.plotly_chart(fig2)
 
 	st.subheader('Conclusão:')
+	st.write('Aqui temos algo que dificilmente ocorre, mas quando ocorreu, não teve tanto impacto, mas como tudo no trânsito, deves ser algo a ser observado')
 
 
 if select == 'Accident victim':
@@ -214,6 +192,8 @@ if select == 'Accident victim':
 	st.plotly_chart(fig2)
 
 	st.subheader('Conclusão:')
+	st.write('Vítimas de Acidente felizmente é algo raro de acontecer como mostra o nosso gráfico de variação')
+	st.write('Agora quando análisamos a quantidade de ocorrências e a porcentagem de trafego, podemos observar que ele sim pode influenciar o nivel de lentidão')
 
 
 if select == 'Running over':
@@ -235,6 +215,7 @@ if select == 'Running over':
 	st.plotly_chart(fig2)
 
 	st.subheader('Conclusão:')
+	st.write('Aqui não temos um tipo de acidente que tem um grande impacto na sua ocorrência, mas é algo a ser observado')
 
 
 if select == 'Fire vehicles':
@@ -256,6 +237,8 @@ if select == 'Fire vehicles':
 	st.plotly_chart(fig2)
 
 	st.subheader('Conclusão:')
+	st.write('É algo muito dificil mesmo de acontecer. Só houve ocorrência uma única vez, e quando isso aconteceu, gerou uma lentidão de nível médio.')
+	st.write('Então não dá pra afirmar com precisão que isso vai ocorrer outras vezes')
 
 
 if select == 'Occurrence involving freight':
@@ -277,6 +260,7 @@ if select == 'Occurrence involving freight':
 	st.plotly_chart(fig2)
 
 	st.subheader('Conclusão:')
+	st.write('Como no Comportamento anterior, fica difícil dizer algo relevante com algo que só ocorreu uma vez')
 
 
 if select == 'Incident involving dangerous freight':
@@ -298,6 +282,7 @@ if select == 'Incident involving dangerous freight':
 	st.plotly_chart(fig2)
 
 	st.subheader('Conclusão:')
+	st.write('Mais um Comportamento onde não se pode afirmar nada, pois só ocorreu uma vez')
 
 
 if select == 'Lack of electricity':
@@ -319,6 +304,7 @@ if select == 'Lack of electricity':
 	st.plotly_chart(fig2)
 
 	st.subheader('Conclusão:')
+	st.write('É um dos mais raros à ocorrer, mas ele tem um impacto muito grande nas suas ocorrências, quando ocorre em um ponto, o impacto não é tão grande, mas de 2 pra cima, tem uma influência direta no trafego')
 
 
 if select == 'Fire':
@@ -340,6 +326,7 @@ if select == 'Fire':
 	st.plotly_chart(fig2)
 
 	st.subheader('Conclusão:')
+	st.write('Algo raro de acontecer e quando aconteceu, não teve um impacto relativo mas mesmo assim é algo a se observar')
 
 
 if select == 'Point of flooding':
@@ -361,6 +348,7 @@ if select == 'Point of flooding':
 	st.plotly_chart(fig2)
 
 	st.subheader('Conclusão:')
+	st.write('Aqui temos uma das mais influentes ocorrências na lentidão do trafego de veiculos, pois veiculos mais água é algo muito delicado e a sua ocorrência deixa o transito no mínimo com lentidão MÉDIA')
 
 
 if select == 'Manifestations':
@@ -382,6 +370,7 @@ if select == 'Manifestations':
 	st.plotly_chart(fig2)
 
 	st.subheader('Conclusão:')
+	st.write('Aqui temos interferência humana, ela é rara de acontecer, mas o tamanho da manisfestação tem impacto direto no nível de lentidão. Quanto maior a manifestação, maior a lentidão de trafego')
 
 
 if select == 'Defect in the network of trolleybuses':
@@ -403,6 +392,7 @@ if select == 'Defect in the network of trolleybuses':
 	st.plotly_chart(fig2)
 
 	st.subheader('Conclusão:')
+	st.write('')
 
 
 if select == 'Tree on the road':
@@ -424,6 +414,7 @@ if select == 'Tree on the road':
 	st.plotly_chart(fig2)
 
 	st.subheader('Conclusão:')
+	st.write('É algo de difícil ocorrência mas não é algo de grande impacto segundo nossos dados.')
 
 
 if select == 'Semaphore off':
@@ -445,6 +436,8 @@ if select == 'Semaphore off':
 	st.plotly_chart(fig2)
 
 	st.subheader('Conclusão:')
+	st.write('E aqui outra ocorrência que pode influenciar muito o trafego, dependendo de onde ocorre.')
+	st.write('Temos registros onde na sua ocorrência, o impacto não foi tão alarmante, provavelmente isso ocorreu em um local ou horário com movimentação baixissima')
 
 
 if select == 'Intermittent Semaphore':
@@ -466,6 +459,7 @@ if select == 'Intermittent Semaphore':
 	st.plotly_chart(fig2)
 
 	st.subheader('Conclusão:')
+	st.write('É algo de difícil ocorrência também e não teve tanto impacto quando ocorreu')
 
 
 if select == 'HoraDoDia':
@@ -502,5 +496,5 @@ st.write('')
 st.write('')
 st.write('')
 st.write('')
-st.write('Copyright © 2022 de Pablo')
-st.write('Versão 1.0')
+st.write('Copyright © 2022 de Pablo Dantas')
+st.write('Versão 1.1')

@@ -1,30 +1,19 @@
-# Behavior Urban Traffic/Comportamento Trânsito Urbano
-Repositório do trabalho feito em aula ministrada pelo professor Jose Storopoli da matéria de Ciência de Dados
+# Behavior Urban Traffic / Comportamento Trânsito Urbano
 
-O conjunto de dados é sobre o Comportamento do trânsito urbano da cidade de São Paulo, Brasil
+Este repositório contém um projeto desenvolvido na disciplina de Ciência de Dados na Universidade Nove de Julho, sob a orientação do Prof. Dr. José Eduardo Storopoli. O projeto envolve a análise do comportamento do trânsito urbano na cidade de São Paulo, Brasil, usando dados disponíveis publicamente.
 
-# Projeto Disciplina Ciência de Dados
+## Descrição do Projeto
 
-* Universidade Nove de Julho
-* Ciência da Computação
+O conjunto de dados utilizado neste projeto é sobre o comportamento do trânsito urbano na cidade de São Paulo, Brasil. Os dados foram coletados no período de 14 de dezembro de 2009 a 18 de dezembro de 2009, de segunda a sexta-feira, registrados das 7:00 às 20:00 a cada 30 minutos. Este projeto visa explorar e analisar esses dados, além de realizar análises preditivas relacionadas ao tráfego urbano.
 
+## Integrantes da Equipe
 
-
-## Integrantes
- 
-
-* LUAN VEIGA SAMPAIO FEO
-
-* LUCAS HENRIK JESUS SILVA
-
-* LUCAS ROTH DA SILVA
-
-* MATHEUS DE VERAS LINO
-
-* PABLO DANTAS EVANGELISTA DOS SANTOS
-
-* THIAGO DO SANTOS RODACKI
-
+- Luan Veiga Sampaio Feo
+- Lucas Henrik Jesus Silva
+- Lucas Roth da Silva
+- Matheus de Veras Lino
+- Pablo Dantas Evangelista dos Santos
+- Thiago do Santos Rodacki
 
 
 ## Professor
